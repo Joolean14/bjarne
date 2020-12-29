@@ -30,6 +30,9 @@ The 4 parts of a function are :
 
     The .h suffix signifies that a file is a header file. 
 
+
+<!-- No comprendo la diferencia entre object code y machine code, diagrama pagina 71 me confunde. Luego investigo en la web y al parecer es lo mismo. -->
+
 8. What does the linker do for your program?
 
     A linker combines source code with object code to generate executable machine code.
@@ -45,3 +48,25 @@ The 4 parts of a function are :
 11. If you understand everything in the textbook, why is it necessary to practice?
 
     It is necessary to practice because not applying the knowledge gathered in this textbook into practical examples would make using the concepts explained in a practical context impossible, thus making only understanding a waste of my time.
+
+**Vocabulary**
+
+//
+<<
+C++
+commentcompiler
+compile-time error
+cout
+executable
+function
+header
+IDE
+#include
+library
+linker
+main()
+object code
+output
+program
+source code
+statement
