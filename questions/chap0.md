@@ -109,3 +109,24 @@
     * Distracting social media, specially that status tab on whatsapp.
     * The fear of more sophisticated weapons.
     * Internet security.
+
+
+**Terms**
+
+affordability
+analysis
+blackboard
+CAD/CAM
+communication
+correctness
+customer
+design
+feedback
+GUI
+ideals
+implementation
+programmer
+programming
+softwarestereotype
+testing
+user
