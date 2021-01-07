@@ -15,7 +15,7 @@ int main() {
   std::string operation = "";
   double operand1 = 0;
   double operand2 = 0;
-  double calculator;
+  double result = 0;
 
   std::cout << "Escribe una operacion(+, -, *. /)\n";
   std::cin >> operation;
@@ -25,20 +25,20 @@ int main() {
   std::cin >> operand2;
 
   if (operation == "+") {
-    calculator = operand1 + operand2;
-    std::cout << "El resultado es: " << calculator << "\n";
+   result = operand1 + operand2;
+    std::cout << "El resultado es: " << result << "\n";
   } else if (operation == "-") {
-    calculator = operand1 - operand2;
-    std::cout << "El resultado es: " << calculator << "\n";
+   result = operand1 - operand2;
+    std::cout << "El resultado es: " << result << "\n";
   } else if (operation == "*") {
-    calculator = operand1 * operand2;
-    std::cout << "El resultado es: " << calculator << "\n";
+   result = operand1 * operand2;
+    std::cout << "El resultado es: " << result << "\n";
   } else if (operation == "-") {
-    calculator = operand1 - operand2;
-    std::cout << "El resultado es: " << calculator << "\n";
+   result = operand1 - operand2;
+    std::cout << "El resultado es: " << result << "\n";
   } else if (operation == "/") {
-    calculator = operand1 / operand2;
-    std::cout << "El resultado es: " << calculator << "\n";
+   result = operand1 / operand2;
+    std::cout << "El resultado es: " << result << "\n";
   }
 
   return 0;

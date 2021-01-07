@@ -2,14 +2,19 @@
 // values Steinbeck, Hemingway, Fitzgerald, the output should be Fitzgerald,
 // Hemingway, Steinbeck.
 
+// Hacer la implementacion con if-else y comparaciones, igual que mi
+// implementacion del ejercicio 5 y 6. Aproveche que los operadores < > == etc. funcionan con strings. 
+
+
 #include <bits/stdc++.h>
 #include <iostream>
 #include <string>
 #include <vector>
 
 void printToConsole(std::vector<std::string> names) {
-  for (int i = 0; i < names.size(); i++)
+  for (int i = 0; i < names.size(); i++) {
     std::cout << names[i] << "\n";
+  }
 }
 
 bool compare(std::string a, std::string b) {
@@ -19,7 +24,7 @@ bool compare(std::string a, std::string b) {
 
 std::vector<std::string> alphabeticallySort(std::vector<std::string> a) {
   int n = a.size();
-  sort(a.begin(), a.end(), compare);
+
   return a;
 }
 

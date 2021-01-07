@@ -31,7 +31,7 @@ int main() {
 
   std::cout << "Minimum value for int: " << std::numeric_limits<int>::min()
             << '\n';
-  std::cout << "Maximum value for int: " << std::numeric_limits<int>::max()
+  std::cout << "Maximum value for unsigned long: " << std::numeric_limits<unsigned long>::max()
             << '\n';
   std::cout << "Minimum value for double: " << std::numeric_limits<double>::min()
             << '\n';

@@ -11,22 +11,25 @@ int main() {
 
   int val1 = 0;
   int val2 = 0;
-  int add = val1 + val2;
-  int subtract = val1 - val2;
-  int multiply = val1 * val2;
-  double ratio;
 
   std::cout << "Ingrese el primer número entero\n";
   std::cin >> val1;
   std::cout << "Ingrese el segundo número entero\n";
   std::cin >> val2;
 
+  int add = val1 + val2;
+  int subtract = val1 - val2;
+  int multiply = val1 * val2;
+  float ratio = 0;
+
   if (val1 > val2) {
     std::cout << "El primer entero es mayor y el segundo entero menor\n";
-    ratio = val1 / val2;
+    float val1Float = val1;
+    float val2Float = val2;
+    ratio = val1Float / val2Float;
   } else if (val2 > val1) {
     std::cout << "El segundo entero es mayor y el primer entero es menor\n";
-    ratio = val2 / val1;
+    ratio = (float)val2 / (float)val1;
   }
 
   std::cout << ratio << " Es el ratio de los dos valores\n";

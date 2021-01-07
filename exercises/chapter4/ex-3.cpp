@@ -4,22 +4,67 @@
 // distance between two neighboring cities. Find and print the mean distance
 // between two neighboring cities.
 
+#include <algorithm>
+#include <cmath>
 #include <iostream>
 #include <vector>
 
-void printTotalDistanceSum(std::vector<double> distances) {
-  double totalDistanceSum;
-  double accumulator = 0;
+// void printMeanDistance(std::vector<double> distances, double totalDistanceSum) {
+//   double distanceMean = totalDistanceSum / distances.size();
+//   std::cout << distanceMean << "\n";
+// }
 
-  for (int i = 0; i <= distances.size() - 1; i++) {
-    totalDistanceSum = distances[i] + distances[i + 1];
-    accumulator = totalDistanceSum;
+//Refactorizar distance differences a otra funcion
+
+void printLongestDistance(std::vector<double> distances) {
+  std::vector<double> distanceDifferences = {};
+
+  for (double i = 0; i < distances.size() - 1; i++) {
+    distanceDifferences.push_back(std::abs(distances[i] - distances[i + 1]));
   }
-    std::cout << accumulator << "\n";
+  double lowest =
+      *max_element(distanceDifferences.begin(), distanceDifferences.end());
+
+  std::cout << lowest << "\n";
 }
 
-void printAllDistancesToCout(std::vector<double> distances) {
-  for (int i = 0; i < distances.size(); i++)
+void printShortestDistance(std::vector<double> distances) {
+  std::vector<double> distanceDifferences = {};
+  // double  lowest = distanceDifferences[0];
+  for (double i = 0; i < distances.size() - 1; i++) {
+    distanceDifferences.push_back(std::abs(distances[i] - distances[i + 1]));
+    // Esto seria mejor en otra funcion? para que sea mas bruta?
+    // if (lowest > distanceDifferences[i]) {
+    //   lowest = distanceDifferences[i];
+    // }
+    // esto me genera el error
+    // zsh: segmentation fault (core dumped)  ./ex-3
+    // std::cout << lowest << " es la distancia mas corta entre dos ciudades
+    // vecinas" << "\n";
+    //
+    // std::cout << distanceDifferences[i] << "\n";
+  }
+  double lowest =
+      *min_element(distanceDifferences.begin(), distanceDifferences.end());
+  std::cout << lowest << "\n";
+}
+
+double printTotalDistanceSum(std::vector<double> distances) {
+  double totalDistanceSum = 0;
+
+  for (double i = 0; i <= distances.size() - 1; i++) {
+    totalDistanceSum = totalDistanceSum + distances[i];
+    // Estas dos siguientes lineas no funcionan, por que?
+    // totalDistanceSum = distances[i] + distances[i + 1]
+    // accumulator = totalDistanceSum
+  }
+  std::cout << totalDistanceSum << "\n";
+
+  return totalDistanceSum;
+}
+
+void printAllDistances(std::vector<double> distances) {
+  for (double i = 0; i < distances.size(); i++)
     std::cout << distances[i] << "\n";
 }
 
@@ -38,18 +83,20 @@ int main() {
   }
 
   std::cout << "Distancias ingresadas:\n";
-  printAllDistancesToCout(distances);
+  printAllDistances(distances);
 
   std::cout << "Total suma distancias:\n";
   printTotalDistanceSum(distances);
 
+  std::cout << "Distancia mas corta entre dos ciudades vecinas:\n";
+  printShortestDistance(distances);
+
+  std::cout << "Distancia mas larga entre dos ciudades vecinas:\n";
+  printLongestDistance(distances);
+
+  std::cout << "Distancia promedio entre dos ciudades vecinas:\n";
+  // printMeanDistance(distances , totalDistanceSum);
+
   return 0;
 }
 
-// double vector
-// Read multiple variables with a loop
-x
-// function to print sum of all distances
-// function to print smallest distance between 2 neighboring cities
-// function to print the greatest distance between 2 neighboring cities
-// function to print mean distance between 2 neighboring cities

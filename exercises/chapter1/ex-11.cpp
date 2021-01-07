@@ -1,4 +1,3 @@
-// 11 Write a program that prompts the user to enter some number of pennies
 // (1-cent coins), nickels (5-cent coins), dimes (10-cent coins), quarters
 // (25-cent coins), half dollars (50-cent coins), and one-dollar coins (100-cent
 // coins). Query the user separately for the number of each size coin, e.g.,
@@ -10,6 +9,7 @@
 
 #include <iostream>
 #include <string>
+
 
 // int main() {
 //   int pennies = 1;
@@ -56,8 +56,6 @@ int main() {
   float quarters = 0;
   float halfDollars = 0;
   float oneDollars = 0;
-  float totalCents = 0;
-  std::string plural = "s";
 
   std::cout << "How many pennies do you have?\n";
   std::cin >> pennies;
@@ -77,21 +75,28 @@ int main() {
   std::cout << "How many one dollars do you have?\n";
   std::cin >> oneDollars;
 
-  totalCents = (pennies + (nickels * 5) + (dimes * 10) + (quarters * 25) +
-                (halfDollars * 50) + (oneDollars * 100)) /
-               100;
+  float dollars = (pennies + (nickels * 5) + (dimes * 10) + (quarters * 25) +
+                   (halfDollars * 50) + (oneDollars * 100)) /
+                  100;
 
-//   if (pennies == 1) {
-//     plural = "";
-//   }
+  std::cout << "\nYou have " << pennies;
+  if (pennies > 1) {
+    std::cout << "pennies";
+  } else {
+    std::cout << "penny";
+  }
 
-  std::cout << "\nYou have " << pennies << " pennie" << plural << "\n";
-  std::cout << "You have " << nickels << " nickel" << plural << "\n";
-  std::cout << "You have " << dimes << " dime" << plural << "\n";
-  std::cout << "You have " << quarters << " quarter" << plural << "\n";
-  std::cout << "You have " << halfDollars << " half dollar" << plural << "\n";
-  std::cout << "You have " << oneDollars << " one dollar" << plural << "\n";
-  std::cout << "You have " << totalCents << " dollar" << plural << "\n";
+  std::cout << "You have " << nickels << " nickel"
+            << "\n";
+  std::cout << "You have " << dimes << " dime"
+            << "\n";
+  std::cout << "You have " << quarters << " quarter"
+            << "\n";
+  std::cout << "You have " << halfDollars << " half dollar coins"
+            << "\n";
+  std::cout << "You have " << oneDollars << " one dollar coins"
+            << "\n";
+  std::cout << "You have $" << dollars << "\n";
 
   return 0;
 }

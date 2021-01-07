@@ -10,7 +10,7 @@ int main() {
   std::cout << "Ingrese un numero\n";
   std::cin >> num;
 
-  if (num % 2 == 0) {
+  if ((num % 2) == 0) {
     std::cout << "El numero " << num << " es par\n";
   } else {
     std::cout << "El numero " << num << " es impar\n";
