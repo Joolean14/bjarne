@@ -8,26 +8,54 @@
 // variations to make it less easy for the user to guess which move the machine
 // will make next.
 
+#include <cstdlib>
 #include <iostream>
 #include <vector>
 
-int main() {
-  std::vector<int> cpuMoves = {};
-//   std::vector<int> currentGame = {};
-  int paper = 1;
-  int scissors = 2;
-  int rock = 3;
-      
-  switch (std::vector<int> currentGame;) {
-  case currentGame:
-    // code block
-    break;
-//   case y:
-//     // code block
-//     break;
-//   default:
-//     // code block
+void gameMenu() {
+  std::cout << "\tPiedra, Papel o Tijera\n";
+  std::cout << "1. Papel\n"
+            << "2. Tijera\n"
+            << "3. Piedra\n\n";
 }
+
+int getPlayerMove() {
+  std::cout << "Ingrese su seleccion\n";
+  int userMove = 0;
+  std::cin >> userMove;
+  std::cout << "Your move is: \n" << userMove << "\n";
+
+  return userMove;
+}
+
+int genCpuMove() {
+  int cpuMove = rand() % 3 + 1;
+  std::cout << "The CPU's move is: \n" << cpuMove << "\n";
+
+  return cpuMove;
+}
+
+void chooseWinner(int userMove, int cpuMove) {
+
+
+}
+
+int main() {
+
+  const int paper = 1;
+  const int scissors = 2;
+  const int rock = 3;
+
+  gameMenu();
+  getPlayerMove();
+  genCpuMove();
+  chooseWinner();
+
+  // gameMenu()
+  // getPlayerMove()
+  // genCpuMoves()
+  // chooseWinner()
+
   return 0;
 }
 
@@ -40,5 +68,4 @@ int main() {
 
 // intento switch con char
 // intento switch con int
-
-
+// https://dev.to/maytd/simple-console-rock-paper-scissors-in-c-g35
