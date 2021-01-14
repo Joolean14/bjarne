@@ -12,7 +12,7 @@
 #include <iostream>
 #include <vector>
 
-void gameMenu() {
+void printGameMenu() {
   std::cout << "\tPiedra, Papel o Tijera\n";
   std::cout << "1. Papel\n"
             << "2. Tijera\n"
@@ -23,40 +23,38 @@ int getPlayerMove() {
   std::cout << "Ingrese su seleccion\n";
   int userMove = 0;
   std::cin >> userMove;
-  std::cout << "Your move is: \n" << userMove << "\n";
 
   return userMove;
 }
 
 int genCpuMove() {
   int cpuMove = rand() % 3 + 1;
-  std::cout << "The CPU's move is: \n" << cpuMove << "\n";
+  std::cout << "La seleccion de la CPU es: \n" << cpuMove << "\n";
 
   return cpuMove;
 }
 
 void chooseWinner(int userMove, int cpuMove) {
 
+  if (userMove == 1 || cpuMove == 2) {
+    std::cout << "CPU gana!!!\n";
+  }
 
 }
 
 int main() {
+  int paper = 1;
+  int scissors = 2;
+  int rock = 3;
 
-  const int paper = 1;
-  const int scissors = 2;
-  const int rock = 3;
 
-  gameMenu();
+  printGameMenu();
   getPlayerMove();
   genCpuMove();
-  chooseWinner();
+  chooseWinner(userMove, cpuMove);
 
-  // gameMenu()
-  // getPlayerMove()
-  // genCpuMoves()
-  // chooseWinner()
 
-  return 0;
+  return 0; 
 }
 
 // Rock 1, Paper 2, Scissors 3
