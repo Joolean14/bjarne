@@ -16,10 +16,12 @@
 
 //Refactorizar distance differences a otra funcion
 
-void printLongestDistance(std::vector<double> distances) {
+void printLongestDistance(std::vector<double> distances)
+{
   std::vector<double> distanceDifferences = {};
 
-  for (double i = 0; i < distances.size() - 1; i++) {
+  for (double i = 0; i < distances.size() - 1; i++)
+  {
     distanceDifferences.push_back(std::abs(distances[i] - distances[i + 1]));
   }
   double lowest =
@@ -28,10 +30,12 @@ void printLongestDistance(std::vector<double> distances) {
   std::cout << lowest << "\n";
 }
 
-void printShortestDistance(std::vector<double> distances) {
+void printShortestDistance(std::vector<double> distances)
+{
   std::vector<double> distanceDifferences = {};
   // double  lowest = distanceDifferences[0];
-  for (double i = 0; i < distances.size() - 1; i++) {
+  for (double i = 0; i < distances.size() - 1; i++)
+  {
     distanceDifferences.push_back(std::abs(distances[i] - distances[i + 1]));
     // Esto seria mejor en otra funcion? para que sea mas bruta?
     // if (lowest > distanceDifferences[i]) {
@@ -49,10 +53,12 @@ void printShortestDistance(std::vector<double> distances) {
   std::cout << lowest << "\n";
 }
 
-double printTotalDistanceSum(std::vector<double> distances) {
+double printTotalDistanceSum(std::vector<double> distances)
+{
   double totalDistanceSum = 0;
 
-  for (double i = 0; i <= distances.size() - 1; i++) {
+  for (double i = 0; i <= distances.size() - 1; i++)
+  {
     totalDistanceSum = totalDistanceSum + distances[i];
     // Estas dos siguientes lineas no funcionan, por que?
     // totalDistanceSum = distances[i] + distances[i + 1]
@@ -63,12 +69,14 @@ double printTotalDistanceSum(std::vector<double> distances) {
   return totalDistanceSum;
 }
 
-void printAllDistances(std::vector<double> distances) {
+void printAllDistances(std::vector<double> distances)
+{
   for (double i = 0; i < distances.size(); i++)
     std::cout << distances[i] << "\n";
 }
 
-int main() {
+int main()
+{
   double distance;
   int numOfCities = 0;
   std::vector<double> distances;
@@ -76,7 +84,8 @@ int main() {
   std::cout << "Ingrese el numero de ciudades a analizar\n";
   std::cin >> numOfCities;
 
-  for (int i = 1; i <= numOfCities; ++i) {
+  for (int i = 1; i <= numOfCities; ++i)
+  {
     std::cout << "Ingresa el valor #" << i << "\n";
     std::cin >> distance;
     distances.push_back(distance);
@@ -99,4 +108,3 @@ int main() {
 
   return 0;
 }
-
