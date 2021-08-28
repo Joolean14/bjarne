@@ -4,35 +4,47 @@
 // program should be able to identify the number after asking no more than seven
 // questions. Hint: Use the < and <= operators and the if-else construct.
 
+#include <cmath>
 #include <iostream>
+#include <ostream>
+#include <string>
+#include <math.h>
 
 int main() {
-  bool clues = true;
-  int numGuess = 0;
 
-  std::cout << "Piensa en un número del 1 al 100\n";
-  std::cout << "¿Es mayor o menor que 50?\n";
-  std::cin >> clues;
+  float prediction = 0;
+  float pivot = 50;
+  float userSelectedNumber = 0;
+  std::string isLessThan = "";
+  float delimiter = 25;
 
-  if (clues == true) {
-    std::cout << "¿Es mayor que 25?\n";
-    if (clues == true) {
-    statements
+  std::cout << "Please enter a number between 1 and 100" << std::endl;
+  std::cin >> userSelectedNumber;
+
+  for (int i = 0; i < 7; i++) {
+
+    std::cout << "Is your number less than " << pivot
+              << " please enter ===> t for true or f for false" << std::endl;
+    std::cin >> isLessThan;
+    std::cout << "delimiter = " << ceil(delimiter) << std::endl;
+
+    if (isLessThan == "t") {
+      pivot -= delimiter;
+    } else {
+      pivot += delimiter;
     }
+    delimiter = ceil(delimiter /= 2);
+
+
+  }
+
+
+  if (userSelectedNumber == pivot) {
+    std::cout << "Guess OK" << std::endl;
   } else {
-    std::cout << "¿Es mayor que 75?\n";
+    std::cout << "Guess NOT OK" << std::endl;
   }
 
   return 0;
 }
 
-// Es mayor que 50?
-//  Es mayor 75 menor que 75?
-//      Es mayor que 87
-//  Es mayor o menor que 25?
-//
-// Es par o impar?
-// Ir eliminando de un vector?
-//
-// Prime numbers?
-//
